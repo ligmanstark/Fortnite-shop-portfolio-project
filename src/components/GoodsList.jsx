@@ -1,7 +1,7 @@
 import { GoodsItem } from './GoodsItem';
 
 const GoodsList = (props) => {
-	const { goods = [] } = props;
+	const { goods = [],addOrder=Function.prototype } = props;
 	return (
 		<div className='items'>
 			{goods.length ? (
@@ -9,6 +9,7 @@ const GoodsList = (props) => {
 					<GoodsItem
 						key={good.id}
 						{...good}
+						addOrder={addOrder}
 					/>
 				))
 			) : (

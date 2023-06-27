@@ -4,11 +4,14 @@ import React, { useState, useEffect } from 'react';
 import { Preloader } from './Preloader';
 import { GoodsList } from '../components/GoodsList';
 import { Cart } from '../components/Cart';
+import { CartList } from '../components/CartList';
+
 
 const Shop = () => {
 	const [goods, setGoods] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [order, setOrder] = useState([]);
+	const [isOpenCart, setOpenCart] = useState(false);
 
 	useEffect(function getGoods() {
 		axios
@@ -32,7 +35,7 @@ const Shop = () => {
 	}, []);
 
 	const addOrder = (item) => {
-		const itemIndex = order.findIndex((el) => el.id === item.id);
+		const itemIndex = order.findIndex((el) => (el.id === item.id));
 
 		if (itemIndex < 0) {
 			const newItem = {
@@ -55,10 +58,17 @@ const Shop = () => {
 		}
 	};
 
+	const handleOpenCart = () => {
+		setOpenCart(!isOpenCart)
+	}
+
 	return (
 		<main className='container content'>
-			<Cart quantity={order.length} />
+			<Cart quantity={order.length} handleOpenCart={handleOpenCart} />
 			{loading ? <Preloader /> : <GoodsList goods={goods} addOrder={addOrder} />}
+			{
+				isOpenCart && <CartList order={order} handleOpenCart={handleOpenCart} />
+			}
 		</main>
 	);
 };

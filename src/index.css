@@ -52,3 +52,18 @@ nav {
 }
 .cart-quantity {
 }
+
+.cart-list{
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+	background-color: white;
+	width: 50rem;
+	max-width: 95%;
+}
+
+.close-icon{
+	cursor: pointer;
+}

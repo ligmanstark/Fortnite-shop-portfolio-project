@@ -50,8 +50,7 @@ nav {
 		bottom: unset;
 	}
 }
-.cart-quantity {
-}
+
 
 .cart-list{
 	position:fixed;
@@ -66,4 +65,12 @@ nav {
 
 .close-icon{
 	cursor: pointer;
+}
+
+.order{
+	position: fixed;
+    height: 33px;
+    right: 1rem;
+    bottom: 4px;
+    font-size: 12px;
 }

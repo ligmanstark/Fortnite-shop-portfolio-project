@@ -1,7 +1,12 @@
 import { CartItem } from './CartItem';
 
 const CartList = (props) => {
-	const { order = [], handleOpenCart = Function.prototype } = props;
+	const {
+		order = [],
+		handleOpenCart = Function.prototype,
+		removeOrder = Function.prototype,
+		addQuantity = Function.prototype,
+	} = props;
 	const totalPrice = order.reduce((sum, item) => {
 		return sum + item.price * item.quantity;
 	}, 0);
@@ -25,12 +30,16 @@ const CartList = (props) => {
 					<CartItem
 						key={item.id}
 						{...item}
+						removeOrder={removeOrder}
+						addQuantity={addQuantity}
 					/>
 				))
 			) : (
 				<li className='collection-item'>Корзина пуста</li>
 			)}
-			<li className='collection-item active'>Общая стоимость: {totalPrice}</li>
+			<li className='collection-item active'>Общая стоимость: {totalPrice}
+			<button className='secondary-content btn order'>Оформить заказ</button>
+			</li>
 		</ul>
 	);
 };

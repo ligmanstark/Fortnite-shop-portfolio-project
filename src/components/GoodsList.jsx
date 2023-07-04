@@ -1,7 +1,10 @@
 import { GoodsItem } from './GoodsItem';
 
 const GoodsList = (props) => {
-	const { goods = [],addOrder=Function.prototype } = props;
+	const {
+		goods = [],
+		addOrder = Function.prototype,
+	} = props;
 	return (
 		<div className='items'>
 			{goods.length ? (

@@ -3,11 +3,7 @@ const GoodsItem = (props) => {
 		id,
 		name,
 		description,
-		type,
 		price,
-		priceNoDiscount,
-		image,
-		icon,
 		rarity,
 		full_background,
 		addOrder = Function.prototype,
@@ -23,7 +19,6 @@ const GoodsItem = (props) => {
 					alt={name}
 				/>
 			</div>
-			{/* <span className='card-title'>{name}</span> */}
 			<span className='card-title rarity'>{rarity}</span>
 
 			<div className='card-content'>

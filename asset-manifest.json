@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.cdbeeb96.css",
-    "main.js": "/static/js/main.fec150f5.js",
-    "static/js/787.61da6377.chunk.js": "/static/js/787.61da6377.chunk.js",
-    "index.html": "/index.html",
-    "main.cdbeeb96.css.map": "/static/css/main.cdbeeb96.css.map",
-    "main.fec150f5.js.map": "/static/js/main.fec150f5.js.map",
-    "787.61da6377.chunk.js.map": "/static/js/787.61da6377.chunk.js.map"
+    "main.css": "/Fortnite-shop-portfolio-project/static/css/main.cdbeeb96.css",
+    "main.js": "/Fortnite-shop-portfolio-project/static/js/main.b2cc0f5b.js",
+    "static/js/787.61da6377.chunk.js": "/Fortnite-shop-portfolio-project/static/js/787.61da6377.chunk.js",
+    "index.html": "/Fortnite-shop-portfolio-project/index.html",
+    "main.cdbeeb96.css.map": "/Fortnite-shop-portfolio-project/static/css/main.cdbeeb96.css.map",
+    "main.b2cc0f5b.js.map": "/Fortnite-shop-portfolio-project/static/js/main.b2cc0f5b.js.map",
+    "787.61da6377.chunk.js.map": "/Fortnite-shop-portfolio-project/static/js/787.61da6377.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cdbeeb96.css",
-    "static/js/main.fec150f5.js"
+    "static/js/main.b2cc0f5b.js"
   ]
 }

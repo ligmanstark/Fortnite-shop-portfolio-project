@@ -1,6 +1,6 @@
 {
   "name": "shop-project",
-  "home":"https://ligmanstark.github.io/Fortnite-shop-portfolio-project/",
+  "homepage":"https://ligmanstark.github.io/Fortnite-shop-portfolio-project/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

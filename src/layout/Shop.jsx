@@ -21,7 +21,7 @@ const Shop = () => {
 					lang: 'ru',
 				},
 				headers: {
-					Authorization: API_KEY,
+					Authorization: '5dc6abd3-4291483a-0e025f19-04f968e8',
 				},
 			})
 			.then((response) => {

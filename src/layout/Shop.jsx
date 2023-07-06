@@ -64,7 +64,8 @@ const Shop = () => {
 		if (quantity === 1) {
 			const newOrder = order.filter((el) => el.id !== id);
 			setOrder(newOrder);
-		} else if (quantity > 1) {
+		} else if (quantity > 1)
+		{
 			const newOrder = order.map((el) => {
 				if (el.id === id) {
 					return {

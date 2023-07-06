@@ -44,33 +44,42 @@ nav {
 	z-index: 5;
 	padding: 1rem;
 }
-@media(min-width:767px){
-	.cart{
-		top:5rem;
+
+@media(min-width:767px) {
+	.cart {
+		top: 5rem;
 		bottom: unset;
 	}
 }
 
 
-.cart-list{
-	position:fixed;
+.cart-list {
+	position: fixed;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%, -50%);
 
 	background-color: white;
 	width: 50rem;
 	max-width: 95%;
 }
 
-.close-icon{
+.card-image{
+	background-color: lightgray;
+}
+
+.close-icon {
 	cursor: pointer;
 }
 
-.order{
+.order {
 	position: fixed;
-    height: 33px;
-    right: 1rem;
-    bottom: 4px;
-    font-size: 12px;
+	height: 33px;
+	right: 1rem;
+	bottom: 4px;
+	font-size: 12px;
+}
+
+.preload {
+	margin-top: calc(928px /2);
 }

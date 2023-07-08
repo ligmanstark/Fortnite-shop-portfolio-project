@@ -13,6 +13,7 @@ const Shop = () => {
 	const [order, setOrder] = useState([]);
 	const [isOpenCart, setOpenCart] = useState(false);
 	const [alertName, setAlertName] = useState('');
+	const [isFinal,setFinal] = useState(false);
 
 	useEffect(function getGoods() {
 		axios
@@ -102,6 +103,10 @@ const Shop = () => {
 		setAlertName('');
 	};
 
+	const handleFinalOrder = () => {
+		setFinal(!isFinal)
+	}
+
 	return (
 		<main className='container content'>
 			<Cart
@@ -122,12 +127,15 @@ const Shop = () => {
 					handleOpenCart={handleOpenCart}
 					removeOrder={removeOrder}
 					addQuantity={addQuantity}
+					handleFinalOrder={handleFinalOrder}
 				/>
 			)}
-			{alertName && (
+			{(alertName || isFinal) && (
 				<Toast
 					name={alertName}
 					closeAlert={closeAlert}
+					handleFinalOrder={handleFinalOrder}
+					isFinal={isFinal}
 				/>
 			)}
 		</main>

@@ -6,6 +6,7 @@ const CartList = (props) => {
 		handleOpenCart = Function.prototype,
 		removeOrder = Function.prototype,
 		addQuantity = Function.prototype,
+		handleFinalOrder=Function.prototype,
 	} = props;
 	const totalPrice = order.reduce((sum, item) => {
 		return sum + item.price * item.quantity;
@@ -38,7 +39,7 @@ const CartList = (props) => {
 				<li className='collection-item'>Корзина пуста</li>
 			)}
 			<li className='collection-item active'>Общая стоимость: {totalPrice}
-			<button className='secondary-content btn order'>Оформить заказ</button>
+			<button className='secondary-content btn order' onClick={handleFinalOrder}>Оформить заказ</button>
 			</li>
 		</ul>
 	);

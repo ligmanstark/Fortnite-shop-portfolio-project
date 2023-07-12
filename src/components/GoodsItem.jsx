@@ -5,7 +5,7 @@ const GoodsItem = (props) => {
 		description,
 		price,
 		rarity,
-		full_background,
+		icon,
 		addOrder = Function.prototype,
 	} = props;
 	return (
@@ -15,7 +15,7 @@ const GoodsItem = (props) => {
 		>
 			<div className='card-image'>
 				<img
-					src={full_background}
+					src={icon}
 					alt={name}
 				/>
 			</div>

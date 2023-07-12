@@ -9,6 +9,7 @@ const initialState = {
 	order: [],
 	isOpenCart: false,
 	alertName: '',
+	isFinal: false,
 };
 
 export const ContextProvider = ({ children }) => {
@@ -20,23 +21,26 @@ export const ContextProvider = ({ children }) => {
 
 	value.removeOrder = (id, quantity) => {
 		dispatch({ type: 'REMOVE_ORDER', payload: { id, quantity } });
-    };
-    
-    value.addQuantity = (itemId) => {
-        dispatch({type:'ADD_QUANTITY',payload:{id:itemId}})
-    }
+	};
 
-    value.handleOpenCart = () => {
-        dispatch({type:'IS_OPEN_CART'})
-    }
+	value.addQuantity = (itemId) => {
+		dispatch({ type: 'ADD_QUANTITY', payload: { id: itemId } });
+	};
 
-    value.addOrder = (item) => {
-        dispatch({type:'ADD_ORDER', payload:{item}})
-	}
-	
+	value.handleOpenCart = () => {
+		dispatch({ type: 'IS_OPEN_CART' });
+	};
+
+	value.addOrder = (item) => {
+		dispatch({ type: 'ADD_ORDER', payload: item });
+	};
+
 	value.handleFinalOrder = () => {
-        dispatch({type:'IS_FINAL_ORDER'})
-    }
+		dispatch({ type: 'IS_FINAL_ORDER' });
+	};
+	value.setGoods = (data) => {
+		dispatch({ type: 'SET_GOODS', payload: data });
+	};
 
 	return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
 };

@@ -1,12 +1,14 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 import { useEffect } from 'react';
 
-const Toast = (props) => {
+const Toast = () => {
 	const {
-		name = '',
+		alertName: name = '',
 		closeAlert = Function.prototype,
 		handleFinalOrder = Function.prototype,
 		isFinal,
-	} = props;
+	} = useContext(ShopContext);
 
 	useEffect(() => {
 		const timerId = setTimeout(closeAlert, 3000);
@@ -17,7 +19,11 @@ const Toast = (props) => {
 	}, [name]);
 
 	useEffect(() => {
-		const timerId = setTimeout(handleFinalOrder, 3000);
+		let timerId;
+		if (isFinal) {
+			timerId = setTimeout(handleFinalOrder, 3000);
+		}
+
 		return () => {
 			clearTimeout(timerId);
 		};

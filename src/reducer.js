@@ -1,9 +1,16 @@
 export const reducer = (state, { type, payload }) => {
 	switch (type) {
+		case 'SET_GOODS':
+			return {
+				...state,
+				goods: payload || [],
+				loading: false,
+			};
+
 		case 'CLOSE_ALERT':
 			return {
 				...state,
-				alertName: '',
+				alertName:'',
 			};
 		case 'REMOVE_ORDER':
 			if (payload.quantity === 1) {
@@ -48,10 +55,11 @@ export const reducer = (state, { type, payload }) => {
 			};
 		case 'ADD_ORDER': {
 			const itemIndex = state.order.findIndex(
-				(el) => el.id === payload.item.id
+				(el) => el.id === payload.id
 			);
-
 			let newOrder = null;
+			console.log(state.goods);
+
 			if (itemIndex < 0) {
 				const newItem = {
 					...payload,
@@ -61,9 +69,11 @@ export const reducer = (state, { type, payload }) => {
 			} else {
 				newOrder = state.order.map((orderItem, index) => {
 					if (index === itemIndex) {
+                        const newQuantity = orderItem.quantity + 1;
+                        console.log(orderItem);
 						return {
-							...orderItem,
-							quantity: orderItem.quantity + 1,
+							...payload,
+							quantity: newQuantity,
 						};
 					} else {
 						return orderItem;
@@ -73,7 +83,8 @@ export const reducer = (state, { type, payload }) => {
 			return {
 				...state,
 				order: newOrder,
-				alertName: payload.name,
+                alertName: payload.name,
+                isFinal:false,
 			};
 		}
 		case 'IS_FINAL_ORDER':

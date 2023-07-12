@@ -5,9 +5,7 @@ const GoodsItem = (props) => {
 		description,
 		price,
 		rarity,
-		full_background,
 		icon,
-		image,
 		addOrder = Function.prototype,
 	} = props;
 	return (

@@ -32,6 +32,10 @@ export const ContextProvider = ({ children }) => {
 
     value.addOrder = (item) => {
         dispatch({type:'ADD_ORDER', payload:{item}})
+	}
+	
+	value.handleFinalOrder = () => {
+        dispatch({type:'IS_FINAL_ORDER'})
     }
 
 	return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>;
